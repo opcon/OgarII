@@ -17,7 +17,7 @@ const DefaultGamemodes = [
 
 /** @returns {DefaultSettings} */
 function readSettings() {
-    try { return JSON.parse(fs.readFileSync("./settings.json", "utf-8")); }
+    try { return JSON.parse(fs.readFileSync("./settings/settings.json", "utf-8")); }
     catch (e) {
         console.log("caught error while parsing/reading settings.json:", e.stack);
         process.exit(1);
@@ -25,10 +25,10 @@ function readSettings() {
 }
 /** @param {DefaultSettings} settings */
 function overwriteSettings(settings) {
-    fs.writeFileSync("./settings.json", JSON.stringify(settings, null, 4), "utf-8");
+    fs.writeFileSync("./settings/settings.json", JSON.stringify(settings, null, 4), "utf-8");
 }
 
-if (!fs.existsSync("./settings.json"))
+if (!fs.existsSync("./settings/settings.json"))
     overwriteSettings(DefaultSettings);
 let settings = readSettings();
 

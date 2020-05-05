@@ -26,9 +26,9 @@ let settings = {
 const { EOL } = require("os");
 const fs = require("fs");
 
-if (fs.existsSync("./log-settings.json"))
-    settings = Object.assign(settings, JSON.parse(fs.readFileSync("./log-settings.json", "utf-8")));
-fs.writeFileSync("./log-settings.json", JSON.stringify(settings, null, 4), "utf-8");
+if (fs.existsSync("./settings/log-settings.json"))
+    settings = Object.assign(settings, JSON.parse(fs.readFileSync("./settings/log-settings.json", "utf-8")));
+fs.writeFileSync("./settings/log-settings.json", JSON.stringify(settings, null, 4), "utf-8");
 
 /**
  * @param {Date=} date
