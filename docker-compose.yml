@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  ogar:
+    build:
+      context: ./app
+    ports:
+      - 443:443
+    volumes:
+      - ./settings:/home/node/app/settings
